@@ -20,11 +20,18 @@ Mihoyo TA 测试工具
 
 3. 打开 Script Editor，运行以下代码：
 
+try :
+  import PySide2
+except ImportError:
+  import PySide6
+  print("Hello!")
+
 import sys
 sys.path.append(r"你的工具路径")
 
 import scripts.ui
 scripts.ui.showUI()
+
 
 （例如：sys.path.append(r"D:/mihoyo_tool_test")）
 
