@@ -1,10 +1,20 @@
-from PySide2.QtWidgets import (QDialog, QWidget, QPushButton, QVBoxLayout,
+try:
+    from PySide2.QtWidgets import (QDialog, QWidget, QPushButton, QVBoxLayout,
                                QLineEdit, QLabel,QHBoxLayout, QComboBox,
                                QCheckBox, QSlider)
-from PySide2.QtCore import Qt
+    from shiboken2 import wrapInstance
+    from PySide2.QtCore import Qt
+
+except ImportError:
+    from PySide6.QtWidgets import (QDialog, QWidget, QPushButton, QVBoxLayout,
+                                   QLineEdit, QLabel, QHBoxLayout, QComboBox,
+                                   QCheckBox, QSlider)
+    from shiboken6 import wrapInstance
+    from PySide6.QtCore import Qt
+
 
 import maya.OpenMayaUI as omui
-from shiboken2 import wrapInstance
+
 
 from . import rig_utils
 
